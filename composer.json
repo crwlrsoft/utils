@@ -1,10 +1,9 @@
 {
-    "name": "crwlr/package-template",
-    "description": "Template repository for new crwlr packages.",
+    "name": "crwlr/utils",
+    "description": "Utilities that are needed in multiple crawler packages.",
     "keywords": [
-        "crwlr"
+        "crwlr", "utils", "json"
     ],
-    "homepage": "https://www.crwlr.software/packages/...",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -15,13 +14,12 @@
         }
     ],
     "support": {
-        "issues": "https://github.com/crwlrsoft/.../issues",
-        "source": "https://github.com/crwlrsoft/...",
-        "docs": "https://www.crwlr.software/packages/..."
+        "issues": "https://github.com/crwlrsoft/utils/issues",
+        "source": "https://github.com/crwlrsoft/utils"
     },
     "autoload": {
         "psr-4": {
-            "Crwlr\\PackageTemplate\\": "src/"
+            "Crwlr\\Utils\\": "src/"
         }
     },
     "require": {

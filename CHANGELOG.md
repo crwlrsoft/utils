@@ -6,6 +6,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [0.1.0] - 20xx-xx-xx
-### Added (Changed, Fixed, Remove)
-- foo bar
+## [1.0.0] - 2023-05-17
+### Added
+- The `Json` class that converts JSON strings to array and also tries to deal with "relaxed" JSON, where keys can be unquoted.
