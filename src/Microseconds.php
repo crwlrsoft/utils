@@ -13,9 +13,7 @@ namespace Crwlr\Utils;
 
 class Microseconds
 {
-    public function __construct(public int $value)
-    {
-    }
+    public function __construct(public int $value) {}
 
     public static function now(): self
     {
