@@ -61,6 +61,20 @@ it('correctly fixes keys without quotes, when the value is an empty string', fun
     ]);
 });
 
+it('fixes unescaped double quotes inside a string value', function () {
+    $jsonString = <<<JSON
+        {
+            "foo": "bar "lorem" ipsum baz",
+            "bar": "lets "do" "" "even more"
+        }
+        JSON;
+
+    expect(Json::stringToArray($jsonString))->toBe([
+        'foo' => 'bar "lorem" ipsum baz',
+        'bar' => 'lets "do" "" "even more',
+    ]);
+});
+
 it('throws an exception when the string is not a (valid) JSON string', function () {
     Json::stringToArray('{ foo: bar ]');
 })->throws(InvalidJsonException::class);

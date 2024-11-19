@@ -26,9 +26,9 @@
         "php": "^8.0"
     },
     "require-dev": {
-        "pestphp/pest": "^1.22",
+        "pestphp/pest": "^1.22|^2.0|^3.0",
         "phpstan/phpstan": "^1.8",
-        "friendsofphp/php-cs-fixer": "^3.11"
+        "friendsofphp/php-cs-fixer": "^3.57"
     },
     "scripts": {
         "test": "@php vendor/bin/pest",
