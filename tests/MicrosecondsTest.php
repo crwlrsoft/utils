@@ -16,7 +16,7 @@ it('adds the value of another instance to its own value', function () {
     expect(
         Microseconds::fromSeconds(2.23)
             ->add(Microseconds::fromSeconds(3.37))
-            ->toSeconds()
+            ->toSeconds(),
     )->toBe(5.6);
 });
 
@@ -24,7 +24,7 @@ it('subtracts the value of another instance from its own value', function () {
     expect(
         Microseconds::fromSeconds(5.35)
             ->subtract(Microseconds::fromSeconds(2.20))
-            ->toSeconds()
+            ->toSeconds(),
     )->toBe(3.15);
 });
 
@@ -33,9 +33,9 @@ it(
     function (float $value, float $greaterThan, bool $result) {
         expect(
             Microseconds::fromSeconds($value)
-                ->isGreaterThan(Microseconds::fromSeconds($greaterThan))
+                ->isGreaterThan(Microseconds::fromSeconds($greaterThan)),
         )->toBe($result);
-    }
+    },
 )->with([
     [1.2345, 1.2344, true],
     [1.2345, 1.2345, false],
@@ -47,9 +47,9 @@ it(
     function (float $value, float $greaterThan, bool $result) {
         expect(
             Microseconds::fromSeconds($value)
-                ->isGreaterThanOrEqual(Microseconds::fromSeconds($greaterThan))
+                ->isGreaterThanOrEqual(Microseconds::fromSeconds($greaterThan)),
         )->toBe($result);
-    }
+    },
 )->with([
     [1.2345, 1.2344, true],
     [1.2345, 1.2345, true],
@@ -61,9 +61,9 @@ it(
     function (float $value, float $greaterThan, bool $result) {
         expect(
             Microseconds::fromSeconds($value)
-                ->isLessThan(Microseconds::fromSeconds($greaterThan))
+                ->isLessThan(Microseconds::fromSeconds($greaterThan)),
         )->toBe($result);
-    }
+    },
 )->with([
     [1.2345, 1.2344, false],
     [1.2345, 1.2345, false],
@@ -75,9 +75,9 @@ it(
     function (float $value, float $lessThanOrEqual, bool $result) {
         expect(
             Microseconds::fromSeconds($value)
-                ->isLessThanOrEqual(Microseconds::fromSeconds($lessThanOrEqual))
+                ->isLessThanOrEqual(Microseconds::fromSeconds($lessThanOrEqual)),
         )->toBe($result);
-    }
+    },
 )->with([
     [1.2345, 1.2346, true],
     [1.2345, 1.2345, true],
