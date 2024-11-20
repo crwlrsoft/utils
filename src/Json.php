@@ -66,14 +66,18 @@ class Json
         ) ?? $jsonString;
 
         // If JSON string contains unescaped double quotes inside a string value, try to fix it.
-        if (preg_match('/".+?": "(.+(?<!\\\\)".+)"\s*?(,|})/', $jsonString)) {
-            $jsonString = preg_replace_callback('/".+?": "(.+(?<!\\\\)".+)"\s*?(,|})/', function ($match) {
-                return str_replace(
-                    $match[1],
-                    str_replace('"', '\"', $match[1]),
-                    $match[0],
-                );
-            }, $jsonString) ?? $jsonString;
+        if (preg_match('/"[^",}]*?":\s*?"((?:[^",}]*?(?<!\\\\)")+[^"]*?)"\s*?(,|})/', $jsonString)) {
+            $jsonString = preg_replace_callback(
+                '/"[^",}]*?":\s*?"((?:[^",}]*?(?<!\\\\)")+[^"]*?)"\s*?(,|})/',
+                function ($match) {
+                    return str_replace(
+                        $match[1],
+                        str_replace('"', '\"', $match[1]),
+                        $match[0],
+                    );
+                },
+                $jsonString,
+            ) ?? $jsonString;
         }
 
         return $jsonString;

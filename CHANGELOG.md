@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.2] - 2024-11-20
+### Fixed
+- Another improvement for parsing invalid JSON with unescaped double quote characters inside string values.
+
 ## [1.1.1] - 2024-11-20
 ### Fixed
 - Improve parsing invalid JSON by detecting and fixing unescaped double quote characters inside string values.
