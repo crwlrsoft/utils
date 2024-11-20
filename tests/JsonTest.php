@@ -75,6 +75,18 @@ it('fixes unescaped double quotes inside a string value', function () {
     ]);
 });
 
+it('correctly fixes unescaped double quotes inside a string value in one-line JSON', function () {
+    $jsonString = <<<JSON
+        { "foo": "bar", "description": "lorem "ipsum" asdf", "baz": "quz "yo" "" "lo"" }
+        JSON;
+
+    expect(Json::stringToArray($jsonString))->toBe([
+        'foo' => 'bar',
+        'description' => 'lorem "ipsum" asdf',
+        'baz' => 'quz "yo" "" "lo"',
+    ]);
+});
+
 it('throws an exception when the string is not a (valid) JSON string', function () {
     Json::stringToArray('{ foo: bar ]');
 })->throws(InvalidJsonException::class);
