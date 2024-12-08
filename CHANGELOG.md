@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.2.0] - 2024-12-08
+### Added
+* Class `PhpVersion` to check if the PHP version is at least, or below a certain major and minor version.
+
 ## [1.1.2] - 2024-11-20
 ### Fixed
 - Another improvement for parsing invalid JSON with unescaped double quote characters inside string values.
