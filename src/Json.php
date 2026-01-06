@@ -44,12 +44,10 @@ class Json
                     $key = $match[1];
 
                     $value = $match[2];
-                } elseif (count($match) === 5) {
+                } else {
                     $key = $match[3];
 
                     $value = $match[4];
-                } else {
-                    return $match[0];
                 }
 
                 if (!str_starts_with($key, '"')) {
